@@ -1,5 +1,138 @@
 [
   {
+    "id": "_pb_users_auth_",
+    "name": "users",
+    "type": "auth",
+    "system": false,
+    "schema": [
+      {
+        "id": "users_name",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "users_avatar",
+        "name": "avatar",
+        "type": "file",
+        "system": false,
+        "required": false,
+        "options": {
+          "maxSelect": 1,
+          "maxSize": 5242880,
+          "mimeTypes": [
+            "image/jpeg",
+            "image/png",
+            "image/svg+xml",
+            "image/gif",
+            "image/webp"
+          ],
+          "thumbs": null,
+          "protected": false
+        }
+      },
+      {
+        "id": "2gd1lbpt",
+        "name": "role",
+        "type": "select",
+        "system": false,
+        "required": false,
+        "options": {
+          "maxSelect": 2,
+          "values": [
+            "resident",
+            "property"
+          ]
+        }
+      },
+      {
+        "id": "pqh2ey2m",
+        "name": "phone",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "gtddcdaq",
+        "name": "identity",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ],
+    "indexes": [],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
+    "options": {
+      "allowEmailAuth": true,
+      "allowOAuth2Auth": true,
+      "allowUsernameAuth": true,
+      "exceptEmailDomains": null,
+      "manageRule": null,
+      "minPasswordLength": 8,
+      "onlyEmailDomains": null,
+      "requireEmail": false
+    }
+  },
+  {
+    "id": "8g0xkhef5cffpxi",
+    "name": "DO_NOT_MODIFY_THIS",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "it35flk2",
+        "name": "title",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "xhdxweck",
+        "name": "content",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ],
+    "indexes": [],
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
     "id": "mbreeq6y4vg0vbe",
     "name": "communities",
     "type": "base",
@@ -11,6 +144,30 @@
         "type": "text",
         "system": false,
         "required": true,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "jmvwxtzb",
+        "name": "struct",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "joqggy2d",
+        "name": "parking",
+        "type": "text",
+        "system": false,
+        "required": false,
         "options": {
           "min": null,
           "max": null,
@@ -28,7 +185,7 @@
   },
   {
     "id": "i24gt1330xtm2lz",
-    "name": "notifications",
+    "name": "announcements",
     "type": "base",
     "system": false,
     "schema": [
@@ -59,15 +216,132 @@
         }
       },
       {
-        "id": "vbcruld9",
-        "name": "content",
-        "type": "editor",
+        "id": "rere5csh",
+        "name": "author",
+        "type": "text",
         "system": false,
         "required": false,
-        "options": {}
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "e90uwkun",
+        "name": "content",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
       }
     ],
     "indexes": [],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
+    "options": {}
+  },
+  {
+    "id": "qbnwfo2n6tl4rjz",
+    "name": "about",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "rdbq6okk",
+        "name": "content",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ],
+    "indexes": [],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
+    "options": {}
+  },
+  {
+    "id": "3fk92rcjzpfucsj",
+    "name": "residents",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "bojfh63n",
+        "name": "userId",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "options": {
+          "collectionId": "_pb_users_auth_",
+          "cascadeDelete": true,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": []
+        }
+      },
+      {
+        "id": "ptlogbvv",
+        "name": "communityId",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "options": {
+          "collectionId": "mbreeq6y4vg0vbe",
+          "cascadeDelete": true,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": []
+        }
+      },
+      {
+        "id": "dfzqdjxe",
+        "name": "state",
+        "type": "select",
+        "system": false,
+        "required": false,
+        "options": {
+          "maxSelect": 1,
+          "values": [
+            "reviewing",
+            "verified",
+            "rejected"
+          ]
+        }
+      },
+      {
+        "id": "huqbgyal",
+        "name": "idCard",
+        "type": "file",
+        "system": false,
+        "required": false,
+        "options": {
+          "maxSelect": 1,
+          "maxSize": 5242880,
+          "mimeTypes": [],
+          "thumbs": [],
+          "protected": false
+        }
+      }
+    ],
+    "indexes": [
+      "CREATE UNIQUE INDEX `idx_xAW5FnO` ON `residents` (\n  `userId`,\n  `communityId`\n)"
+    ],
     "listRule": "",
     "viewRule": "",
     "createRule": "",
@@ -89,7 +363,7 @@
         "required": false,
         "options": {
           "collectionId": "_pb_users_auth_",
-          "cascadeDelete": false,
+          "cascadeDelete": true,
           "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
@@ -103,7 +377,7 @@
         "required": false,
         "options": {
           "collectionId": "mbreeq6y4vg0vbe",
-          "cascadeDelete": false,
+          "cascadeDelete": true,
           "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
@@ -117,7 +391,11 @@
         "required": false,
         "options": {
           "maxSelect": 1,
-          "values": ["reviewing", "verified", "rejected"]
+          "values": [
+            "reviewing",
+            "verified",
+            "rejected"
+          ]
         }
       },
       {
@@ -135,6 +413,270 @@
       {
         "id": "5vklbn5j",
         "name": "plate",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "jfpo2igo",
+        "name": "photo",
+        "type": "file",
+        "system": false,
+        "required": false,
+        "options": {
+          "maxSelect": 1,
+          "maxSize": 5242880,
+          "mimeTypes": [],
+          "thumbs": [],
+          "protected": false
+        }
+      },
+      {
+        "id": "kyex9qrp",
+        "name": "area",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "yikjkrup",
+        "name": "zone",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "wk8gegxp",
+        "name": "position",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "kmsihd1x",
+        "name": "houseId",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "options": {
+          "collectionId": "7p91weohibpmtgs",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": []
+        }
+      }
+    ],
+    "indexes": [],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
+    "options": {}
+  },
+  {
+    "id": "bnkhtkbzipe0h75",
+    "name": "families",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "ngyaf9ok",
+        "name": "userId",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "options": {
+          "collectionId": "_pb_users_auth_",
+          "cascadeDelete": true,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": []
+        }
+      },
+      {
+        "id": "zmxunjyw",
+        "name": "communityId",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "options": {
+          "collectionId": "mbreeq6y4vg0vbe",
+          "cascadeDelete": true,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": []
+        }
+      },
+      {
+        "id": "v1xnrbp7",
+        "name": "state",
+        "type": "select",
+        "system": false,
+        "required": false,
+        "options": {
+          "maxSelect": 1,
+          "values": [
+            "reviewing",
+            "verified",
+            "rejected"
+          ]
+        }
+      },
+      {
+        "id": "ze6xttcb",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "hlw3kfc7",
+        "name": "relation",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "kyhqj5um",
+        "name": "identity",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ],
+    "indexes": [],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
+    "options": {}
+  },
+  {
+    "id": "7p91weohibpmtgs",
+    "name": "houses",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "wbxqlz9k",
+        "name": "userId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "options": {
+          "collectionId": "_pb_users_auth_",
+          "cascadeDelete": true,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": []
+        }
+      },
+      {
+        "id": "tahilsl0",
+        "name": "communityId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "options": {
+          "collectionId": "mbreeq6y4vg0vbe",
+          "cascadeDelete": true,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": []
+        }
+      },
+      {
+        "id": "v6nksobp",
+        "name": "state",
+        "type": "select",
+        "system": false,
+        "required": false,
+        "options": {
+          "maxSelect": 1,
+          "values": [
+            "reviewing",
+            "verified",
+            "rejected"
+          ]
+        }
+      },
+      {
+        "id": "xezfndkm",
+        "name": "location",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "6hb2rjuf",
+        "name": "building",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "qmehzvga",
+        "name": "floor",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "nhfthnez",
+        "name": "room",
         "type": "text",
         "system": false,
         "required": false,
@@ -167,7 +709,7 @@
         "required": false,
         "options": {
           "collectionId": "_pb_users_auth_",
-          "cascadeDelete": false,
+          "cascadeDelete": true,
           "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
@@ -181,7 +723,7 @@
         "required": false,
         "options": {
           "collectionId": "mbreeq6y4vg0vbe",
-          "cascadeDelete": false,
+          "cascadeDelete": true,
           "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
@@ -195,7 +737,11 @@
         "required": false,
         "options": {
           "maxSelect": 1,
-          "values": ["pending", "processing", "finished"]
+          "values": [
+            "pending",
+            "processing",
+            "finished"
+          ]
         }
       },
       {
@@ -245,149 +791,130 @@
           "max": null,
           "pattern": ""
         }
-      }
-    ],
-    "indexes": [],
-    "listRule": "",
-    "viewRule": "",
-    "createRule": "",
-    "updateRule": "",
-    "deleteRule": "",
-    "options": {}
-  },
-  {
-    "id": "bnkhtkbzipe0h75",
-    "name": "families",
-    "type": "base",
-    "system": false,
-    "schema": [
-      {
-        "id": "ngyaf9ok",
-        "name": "userId",
-        "type": "relation",
-        "system": false,
-        "required": false,
-        "options": {
-          "collectionId": "_pb_users_auth_",
-          "cascadeDelete": false,
-          "minSelect": null,
-          "maxSelect": 1,
-          "displayFields": []
-        }
       },
       {
-        "id": "zmxunjyw",
-        "name": "communityId",
-        "type": "relation",
-        "system": false,
-        "required": false,
-        "options": {
-          "collectionId": "mbreeq6y4vg0vbe",
-          "cascadeDelete": false,
-          "minSelect": null,
-          "maxSelect": 1,
-          "displayFields": []
-        }
-      },
-      {
-        "id": "ze6xttcb",
-        "name": "name",
-        "type": "text",
-        "system": false,
-        "required": false,
-        "options": {
-          "min": null,
-          "max": null,
-          "pattern": ""
-        }
-      },
-      {
-        "id": "hlw3kfc7",
-        "name": "relation",
-        "type": "text",
-        "system": false,
-        "required": false,
-        "options": {
-          "min": null,
-          "max": null,
-          "pattern": ""
-        }
-      },
-      {
-        "id": "v1xnrbp7",
-        "name": "state",
-        "type": "select",
-        "system": false,
-        "required": false,
-        "options": {
-          "maxSelect": 1,
-          "values": ["reviewing", "verified", "rejected"]
-        }
-      }
-    ],
-    "indexes": [],
-    "listRule": "",
-    "viewRule": "",
-    "createRule": "",
-    "updateRule": "",
-    "deleteRule": "",
-    "options": {}
-  },
-  {
-    "id": "_pb_users_auth_",
-    "name": "users",
-    "type": "auth",
-    "system": false,
-    "schema": [
-      {
-        "id": "users_name",
-        "name": "name",
-        "type": "text",
-        "system": false,
-        "required": false,
-        "options": {
-          "min": null,
-          "max": null,
-          "pattern": ""
-        }
-      },
-      {
-        "id": "users_avatar",
-        "name": "avatar",
+        "id": "yk3p845m",
+        "name": "photo",
         "type": "file",
         "system": false,
         "required": false,
         "options": {
           "maxSelect": 1,
           "maxSize": 5242880,
-          "mimeTypes": [
-            "image/jpeg",
-            "image/png",
-            "image/svg+xml",
-            "image/gif",
-            "image/webp"
-          ],
-          "thumbs": null,
+          "mimeTypes": [],
+          "thumbs": [],
           "protected": false
+        }
+      }
+    ],
+    "indexes": [],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
+    "options": {}
+  },
+  {
+    "id": "nc9chfnf41r9byb",
+    "name": "propertys",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "f3uunvzm",
+        "name": "userId",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "options": {
+          "collectionId": "_pb_users_auth_",
+          "cascadeDelete": true,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": []
         }
       },
       {
-        "id": "2gd1lbpt",
-        "name": "role",
+        "id": "ddl1orre",
+        "name": "communityId",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "options": {
+          "collectionId": "mbreeq6y4vg0vbe",
+          "cascadeDelete": true,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": []
+        }
+      },
+      {
+        "id": "hkxklo8p",
+        "name": "state",
         "type": "select",
         "system": false,
         "required": false,
         "options": {
-          "maxSelect": 2,
-          "values": ["resident", "property"]
+          "maxSelect": 1,
+          "values": [
+            "reviewing",
+            "verified",
+            "rejected"
+          ]
+        }
+      }
+    ],
+    "indexes": [
+      "CREATE UNIQUE INDEX `idx_lasYEMc` ON `propertys` (\n  `communityId`,\n  `userId`\n)"
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
+    "options": {}
+  },
+  {
+    "id": "cgrgsvl66z5bttf",
+    "name": "results",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "gbjvmx2h",
+        "name": "voteId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "options": {
+          "collectionId": "66foaau8jcebu3w",
+          "cascadeDelete": true,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": []
         }
       },
       {
-        "id": "pqh2ey2m",
-        "name": "phone",
+        "id": "jg7impa3",
+        "name": "userId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "options": {
+          "collectionId": "_pb_users_auth_",
+          "cascadeDelete": true,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": []
+        }
+      },
+      {
+        "id": "dblc89e5",
+        "name": "option",
         "type": "text",
         "system": false,
-        "required": false,
+        "required": true,
         "options": {
           "min": null,
           "max": null,
@@ -396,70 +923,96 @@
       }
     ],
     "indexes": [],
-    "listRule": "id = @request.auth.id",
-    "viewRule": "id = @request.auth.id",
+    "listRule": "",
+    "viewRule": "",
     "createRule": "",
-    "updateRule": "id = @request.auth.id",
-    "deleteRule": "id = @request.auth.id",
-    "options": {
-      "allowEmailAuth": true,
-      "allowOAuth2Auth": true,
-      "allowUsernameAuth": true,
-      "exceptEmailDomains": null,
-      "manageRule": null,
-      "minPasswordLength": 8,
-      "onlyEmailDomains": null,
-      "requireEmail": false
-    }
+    "updateRule": "",
+    "deleteRule": "",
+    "options": {}
   },
   {
-    "id": "7p91weohibpmtgs",
-    "name": "houses",
+    "id": "66foaau8jcebu3w",
+    "name": "votes",
     "type": "base",
     "system": false,
     "schema": [
       {
-        "id": "wbxqlz9k",
-        "name": "userId",
-        "type": "relation",
-        "system": false,
-        "required": true,
-        "options": {
-          "collectionId": "_pb_users_auth_",
-          "cascadeDelete": false,
-          "minSelect": null,
-          "maxSelect": 1,
-          "displayFields": []
-        }
-      },
-      {
-        "id": "tahilsl0",
+        "id": "uhd6ycgi",
         "name": "communityId",
         "type": "relation",
         "system": false,
-        "required": true,
+        "required": false,
         "options": {
           "collectionId": "mbreeq6y4vg0vbe",
-          "cascadeDelete": false,
+          "cascadeDelete": true,
           "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
         }
       },
       {
-        "id": "v6nksobp",
-        "name": "state",
-        "type": "select",
+        "id": "rck1rcz0",
+        "name": "title",
+        "type": "text",
         "system": false,
         "required": false,
         "options": {
-          "maxSelect": 1,
-          "values": ["reviewing", "verified", "rejected"]
+          "min": null,
+          "max": null,
+          "pattern": ""
         }
       },
       {
-        "id": "xezfndkm",
-        "name": "location",
+        "id": "grthwhfy",
+        "name": "author",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "bdt11sef",
+        "name": "content",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "zno6vkac",
+        "name": "options",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "iypiid6w",
+        "name": "start",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "jpiiw9b8",
+        "name": "end",
         "type": "text",
         "system": false,
         "required": false,
